@@ -1,0 +1,16 @@
+{
+  "name": "mobile-touchpad",
+  "version": "1.0.0",
+  "description": "App to control your pc from a browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "addon-x11": "github:lasicol/addon-x11#master",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}

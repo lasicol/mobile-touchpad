@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+</script>
+<body>
+    <button id="up">UP</button>
+    <button id="down">DOWN</button>
+    <button id="right">RIGHT</button>
+    <button id="left">LEFT</button>
+    <button id="rightmouse">RIGHTMOUSE</button>
+    <button id="leftmouse">LEFTMOUSE</button>
+
+    <script>
+        document.getElementById("up").addEventListener("click", () => {
+            socket.emit('move', {x:0, y:-50});
+        });
+        document.getElementById("down").addEventListener("click", () => {
+            socket.emit('move', {x:0, y:50});
+        });
+        document.getElementById("right").addEventListener("click", () => {
+            socket.emit('move', {x:-50, y:0});
+        });
+        document.getElementById("left").addEventListener("click", () => {
+            socket.emit('move', {x:50, y:0});
+        });
+        document.getElementById("rightmouse").addEventListener("click", () => {
+            socket.emit('btn', {buttonNum:3, press: true});
+            socket.emit('btn', {buttonNum:3, press: false});
+        });
+        document.getElementById("leftmouse").addEventListener("click", () => {
+            socket.emit('btn', {buttonNum:1, press: true});
+            socket.emit('btn', {buttonNum:1, press: false});
+        });
+        
+    </script>
+</body>
+</html>
