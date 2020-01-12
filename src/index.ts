@@ -1,11 +1,4 @@
-import app from './App'
+import {App} from './App';
 
-const port = process.env.PORT || 3000
 
-app.listen(port, (err) => {
-  if (err) {
-    return console.log(err)
-  }
-
-  return console.log(`server is listening on ${port}`)
-})
+export let app = new App().getApp();
